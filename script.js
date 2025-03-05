@@ -1,15 +1,5 @@
-function updateIframes() {
-    const url = document.getElementById('urlInput').value;
-    if (url) {
-        document.getElementById('laptopView').src = url;
-        document.getElementById('tabletView').src = url;
-        document.getElementById('phoneView').src = url;
-    } else {
-        alert('Please enter a valid URL');
-    }
-}
+// console.log('Script loaded');
 
-/*
 function updateIframes() {
     const url = document.getElementById('urlInput').value;
     if (url) {
@@ -20,7 +10,6 @@ function updateIframes() {
         alert('Please enter a valid URL');
     }
 }
-*/
 
 function syncScroll(event) {
     const { scrollTop, scrollLeft } = event.target.contentWindow.document.documentElement;
@@ -42,4 +31,12 @@ document.getElementById('tabletView').addEventListener('load', () => {
 
 document.getElementById('phoneView').addEventListener('load', () => {
     document.getElementById('phoneView').contentWindow.addEventListener('scroll', syncScroll);
+});
+
+document.getElementById('urlInput').addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        event.preventDefault();
+        // console.log('Enter key pressed, triggering submit button');
+        document.getElementById('submitButton').click();
+    }
 });

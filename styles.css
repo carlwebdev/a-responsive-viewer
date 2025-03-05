@@ -50,10 +50,11 @@ body, input, ::placeholder, button {
  */
 #form {
     display: flex;
-    /* justify-content: flex-end; */
+    /* justify-content: flex-end; */  
     gap: 1em;
-    width: 50%;
+    /*  */ width: 50%;
     /* align-self: center; */
+    margin-inline: auto;
 }
 input[type="text"] {
     width: 100%;
