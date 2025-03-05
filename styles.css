@@ -1,0 +1,208 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+
+
+:root {
+    --c-bg: #9c7bff; /* https://codepen.io/reanukeaves/pen/gOjLwYz */
+    --c-bg-alt: #00ff9f;
+    --c-accent: #f8ff1d;
+
+    --border-style: solid;
+    --border-color: black;
+    --border-width: 5px;
+    --border-radius: 8px; 
+    /* --border-radius: 0px; */ 
+    --box-shadow: 5px 5px black;  
+}
+
+
+body {
+    margin: 0;
+    /* padding: 20px; */
+    padding: 4em;
+    /* font-family: Arial, sans-serif; */
+    /* font-family: "Work Sans", serif; */
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* background-color: antiquewhite; */
+    background-color: var(--c-bg);
+    
+}
+
+
+body, input, ::placeholder, button {
+    color: black;
+    font-family: "Work Sans", serif;
+    font-weight: bold; 
+}
+
+
+
+
+
+#form {
+    display: flex;
+    /* justify-content: flex-end; */
+    gap: 1em;
+
+    width: 50%;
+    /* align-self: center; */
+
+}
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    /* margin: 10px 0; */
+    font-size: 1.2em;
+    border: 1px solid #ccc;
+
+    border: var(--border-width) var(--border-style) var(--border-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    
+}
+button {
+    border: none;
+    cursor: pointer;
+
+    padding: 10px;
+    font-size: 1.2em;
+    /* 
+    background-color: #333;
+    color: white;
+    */
+    background-color: white;
+    color: black;
+
+    /* */
+    border: var(--border-width) var(--border-style) var(--border-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+
+
+    font-weight: bold;
+}
+
+
+
+
+.container {
+    text-align: center;
+}
+
+#iframe-container {
+    display: flex;
+    /* justify-content: space-around; */
+    justify-content: space-between;
+    /*
+    gap: 3em;
+    margin-top: 20px;
+    */
+    gap: 4em;
+    margin-top: 4em;
+
+
+    display: grid;
+    grid-template-columns: 1024fr 768fr 375fr;
+
+}
+
+
+
+
+
+.iframe {
+    /*
+    border: 1px solid #ccc;
+    */
+    /* margin: 10px; */
+    background-color: white; /* PRECAUTION */
+
+    border: var(--border-width) var(--border-style) var(--border-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+     
+    /*
+    ::-webkit-scrollbar { 
+        width: 0.5em;/
+      }
+    */  
+    
+}
+
+
+
+
+
+
+
+iframe {
+    display: block;
+    width: 100%;
+
+
+    height: calc(100vh - 16em);
+}
+
+
+
+
+/*
+.laptop {
+    width: 1024px;
+    height: 768px;
+}
+
+.tablet {
+    width: 768px;
+    height: 1024px;
+}
+
+.phone {
+    width: 375px;
+    height: 667px;
+}
+*/
+
+
+
+
+/* 
+ *
+ * SCROLLBARS - VERT  & CHECK HORIZONATLM, AROUND TABLES !! CON LO DE L ACLASE DE TABLE WRAPPER , W_TABLE, ... .TABLE ...
+ *
+ */
+ ::-webkit-scrollbar { /* the bar itseld */
+    width: 1em; /* APPLIES TO VERTICAL SCROLLBAR - make it less massive ...  */
+    /* width: 0.5em; */
+    /* width: 0.5em; */
+    height: 1em; /* APPLIES TO HORIZONTAL SCROLLBAR - test with table RWD - OK, BUYT SOME MARGIN TOP WOULD BE NICE... */
+    background: var(--c-bg); /* */
+  }
+    ::-webkit-scrollbar-track { /* THE BACKGROUND OF THE SCROLLBAR */
+      /* background: hsl(120 75% 50% / 1); */
+      /* background: hsl(120 75% 50%); */
+      /* background: $c_accent_light; */ /* chenag for a lighter verison of the acent color, so build it with variable sfirts  */
+      background: var(--c-bg-alt); /* */ 
+      margin-block: 0.5em;
+      border-radius: 100vw;
+    }
+      ::-webkit-scrollbar-thumb { /* THE MOVABLE SECTION OF THE SCROLLBAR */
+        /* background: hsl(120 100% 20% / 1); */
+        /* border: 0.25em solid hsl(120 75% 50% / 1); */
+        /* background: hsl(120 100% 20%); */
+        /* border: 0.25em solid hsl(120 75% 50%);  */     
+        background: var(--c-accent);
+        border: 0.25em solid var(--c-accent); /* TRICK, TO MAKE IT LOOK LIKE A PADDING FORM THE OUTSIDE INWARDS  */
+        border-radius: 100vw;
+      }
+        ::-webkit-scrollbar-thumb:hover {
+          /* background: hsl(120 100% 10% / 1);  */
+          /* background: $c_accent_dark;   */       
+          /* background: var(--c-bg-alt); /*  */
+          background: var(--c-bg); /*  */
+        }

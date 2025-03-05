@@ -1,0 +1,4 @@
+TODO:
+
+- fomrat the input & button - neobrutalist style, the whole webapp, easy
+- do some rwd medai queries.

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Viewing Tool - @carlwebdev</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div id="form">
+            <input type="text" id="urlInput" placeholder="Enter website URL">
+            <button onclick="updateIframes()">View</button>
+        </div>
+        <div id="iframe-container">
+            <iframe id="laptopView" class="iframe laptop" title="Laptop View"></iframe>
+            <iframe id="tabletView" class="iframe tablet" title="Tablet View"></iframe>
+            <iframe id="phoneView" class="iframe phone" title="Phone View"></iframe>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <!-- <script src="script.js"></script> -->
+    <!-- <script src="script2.js"></script> -->
+    <!-- <script src="script3.js"></script> -->
+</body>
+</html>
