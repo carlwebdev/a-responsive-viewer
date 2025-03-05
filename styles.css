@@ -107,6 +107,46 @@ button {
     grid-template-columns: 1024fr 768fr 375fr;
 }
 
+
+
+@media screen and (max-width: 1240px) {
+
+    
+    #iframe-container {
+        /*  border: 3px solid red; */ /* DEBUG */
+        grid-template-columns: 768fr 375fr;
+    }
+
+    .iframe#laptopView {
+        /* grid-column: 1 / span 3; */
+        grid-column: 1 / span 2;
+    }
+
+    .iframe#tabletView {
+/*         grid-column: 1 / span 2; */
+    }
+
+
+
+
+
+} /* MEDIA-QUERY */
+
+
+
+
+@media screen and (max-width: 1024px) {
+
+    #form {
+        width: unset;
+        margin-inline: unset;
+    }
+    
+} /* MEDIA-QUERY */
+
+
+
+
 .iframe {
     /*
     border: 1px solid #ccc;
