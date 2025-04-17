@@ -8,10 +8,22 @@
 </head>
 <body>
     <div class="container">
-        <div id="form">
-            <input type="text" id="urlInput" placeholder="Enter website URL">
-            <button id="submitButton" onclick="updateIframes()">View</button>
-        </div>
+
+        <header id="header">
+
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/img/logoipsum-332.svg" alt="Logo">
+                </a>
+            </div>
+            <div id="form">
+                <input type="text" id="urlInput" placeholder="Enter website URL">
+                <button id="submitButton" onclick="updateIframes()">View</button>
+            </div>
+        </header>
+
+
+
         <div id="iframe-container">
             <iframe id="laptopView" class="iframe laptop" title="Laptop View"></iframe>
             <iframe id="tabletView" class="iframe tablet" title="Tablet View"></iframe>
