@@ -1,16 +1,35 @@
+/* 
+ * CSS RESET 
+ */
+/*
+body {
+    margin: 0;
+}
+*/
+
 
 /* 
  * TYPOGRAPHY 
  */
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
+body, input, ::placeholder, button {
+    color: var(--c-text);
+    /* font-family: Arial, sans-serif; */   
+    font-family: "Work Sans", serif;
+    font-weight: bold; 
+}
+
+
 /* 
- * VARIABLES 
+ * VARIABLES - CSS CUSTOM PROPERTIES 
  */
-:root {
+:root { 
     --c-bg: #9c7bff; /* https://codepen.io/reanukeaves/pen/gOjLwYz */
     --c-bg-alt: #00ff9f;
     --c-accent: #f8ff1d;
+
+    --c-text: black;
 
     --border-style: solid;
     --border-color: black;
@@ -25,28 +44,23 @@
  */
 body {
     margin: 0;
-    /* padding: 20px; */
     /*
     padding: 4em;
     */
     padding-block: 4em;
     padding-inline: 4em;
-    /* font-family: Arial, sans-serif; */
-    /* font-family: "Work Sans", serif; */
+
     display: flex;
     flex-direction: column;
     /* align-items: center; */
     /* background-color: antiquewhite; */
     background-color: var(--c-bg);
+
     
 }
 
 
-body, input, ::placeholder, button {
-    color: black;
-    font-family: "Work Sans", serif;
-    font-weight: bold; 
-}
+
 
 
 /* 
@@ -64,7 +78,7 @@ body, input, ::placeholder, button {
     /* max-width: 38%; */
     width: 38%;
 }
-input[type="text"] {
+input[type="text"] { /* TODO - URL !!! - AND VALIDATE IT */
     width: 100%;
     padding: 10px;
     /* margin: 10px 0; */
@@ -83,14 +97,19 @@ button {
     background-color: #333;
     color: white;
     */
-    background-color: white;
-    color: black;
+    /* background-color: white; */
+    background-color: var(--c-bg-alt);
+    /* color: var(--c-text); */
 
     /* */
     border: var(--border-width) var(--border-style) var(--border-color);
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
     font-weight: bold;
+
+    &:hover {
+        background-color: var(--c-accent);
+    }
 }
 
 
@@ -118,6 +137,11 @@ header#header {
         }
 
 }
+
+
+
+
+
 
 
 /* 
