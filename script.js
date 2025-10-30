@@ -27,32 +27,22 @@ function updateIframes() {
     }
 }
 
-function syncScroll(event) {
-    const { scrollTop, scrollLeft } = event.target.contentWindow.document.documentElement;
-    const iframes = document.querySelectorAll('.iframe');
-    iframes.forEach(iframe => {
-        if (iframe !== event.target) {
-            iframe.contentWindow.scrollTo(scrollLeft, scrollTop);
-        }
-    });
-}
 
-document.getElementById('laptopView').addEventListener('load', () => {
-    document.getElementById('laptopView').contentWindow.addEventListener('scroll', syncScroll);
-});
 
-document.getElementById('tabletView').addEventListener('load', () => {
-    document.getElementById('tabletView').contentWindow.addEventListener('scroll', syncScroll);
-});
-
-document.getElementById('phoneView').addEventListener('load', () => {
-    document.getElementById('phoneView').contentWindow.addEventListener('scroll', syncScroll);
-});
-
-document.getElementById('urlInput').addEventListener('keypress', function(event) {
+document.getElementById('urlInput').addEventListener('keydown', function(event) {
     if (event.key === 'Enter') {
         event.preventDefault();
-        // console.log('Enter key pressed, triggering submit button');
-        document.getElementById('submitButton').click();
+        const submitButton = document.getElementById('submitButton');
+        submitButton.classList.add('active');
+        // Trigger the action
+        submitButton.click();
+        // Briefly show active state for keyboard activation
+        setTimeout(() => submitButton.classList.remove('active'), 150);
     }
 });
+
+// If an initial URL is present (from HTML default), render it on load
+const initialUrl = document.getElementById('urlInput').value;
+if (initialUrl) {
+    updateIframes();
+}
