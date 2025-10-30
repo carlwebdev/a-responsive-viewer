@@ -6,7 +6,9 @@ body {
     margin: 0;
 }
 */
-
+* {
+    box-sizing: border-box;
+}
 
 /* 
  * TYPOGRAPHY 
@@ -14,8 +16,7 @@ body {
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 body, input, ::placeholder, button {
-    color: var(--c-text);
-    /* font-family: Arial, sans-serif; */   
+    color: var(--c-text); 
     font-family: "Work Sans", serif;
     font-weight: bold; 
 }
@@ -37,6 +38,8 @@ body, input, ::placeholder, button {
     --border-radius: 8px; 
     /* --border-radius: 0px; */ 
     --box-shadow: 5px 5px black;  
+    
+    --js-header-height: 0px; /* Set by JavaScript */
 }
 
 /* 
@@ -44,19 +47,23 @@ body, input, ::placeholder, button {
  */
 body {
     margin: 0;
-    /*
-    padding: 4em;
-    */
-    padding-block: 4em;
-    padding-inline: 4em;
+    padding: 0;
+    height: 100dvh;
+    overflow: hidden;
 
     display: flex;
     flex-direction: column;
     /* align-items: center; */
     /* background-color: antiquewhite; */
-    background-color: var(--c-bg);
+    background-color: var(--c-bg);  
+}
 
-    
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-block: 2em;
+    padding-inline: 2em;
 }
 
 
@@ -119,11 +126,10 @@ header#header {
     justify-content: space-between;
     align-items: center;
     /* padding: 1rem; */
+    padding-bottom: 1rem;
     background-color: var(--c-bg);
-
     flex-wrap: wrap; /* PRECAUTION */
     gap: 1em; /* PRECAUTION */
-
 }
 
 
@@ -140,35 +146,20 @@ header#header {
 
 
 
-
-
-
-
 /* 
  * LAYOUT
  */
-.container {
-    text-align: center;
-}
 
 #iframe-container {
-    display: flex;
-    /* justify-content: space-around; */
-    justify-content: space-between;
-    /*
-    gap: 3em;
-    margin-top: 20px;
-    */
-    gap: 4em;
-    margin-top: 4em;
+    flex: 1;
     display: grid;
     grid-template-columns: 1024fr 768fr 375fr;
+    gap: 2em;
+    /* overflow: hidden; */
 }
-
 
 
 @media screen and (max-width: 1240px) {
-
     
     #iframe-container {
         /*  border: 3px solid red; */ /* DEBUG */
@@ -180,15 +171,7 @@ header#header {
         grid-column: 1 / span 2;
     }
 
-    .iframe#tabletView {
-        /* grid-column: 1 / span 2; */
-    }
-
-
-
 } /* MEDIA-QUERY */
-
-
 
 
 @media screen and (max-width: 1024px) {
@@ -199,8 +182,6 @@ header#header {
     }
     
 } /* MEDIA-QUERY */
-
-
 
 
 .iframe {
@@ -222,13 +203,11 @@ header#header {
     
 }
 
-
 iframe {
     display: block;
     width: 100%;
-    height: calc(100vh - 16em);
+    height: 100%;
 }
-
 
 /*
 .laptop {
@@ -246,7 +225,6 @@ iframe {
     height: 667px;
 }
 */
-
 
 /* 
  *
@@ -267,6 +245,7 @@ iframe {
       background: var(--c-bg-alt); /* */ 
       margin-block: 0.5em;
       border-radius: 100vw;
+      margin-inline: 0.1em;
     }
       ::-webkit-scrollbar-thumb { /* THE MOVABLE SECTION OF THE SCROLLBAR */
         /* background: hsl(120 100% 20% / 1); */
